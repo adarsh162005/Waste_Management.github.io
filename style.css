@@ -28,7 +28,7 @@ p {
 
 /* Header Animation */
 h3::after {
-  content: url('https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif');
+  content: url('https://raw.githubusercontent.com/gist/Prince-Shivaram/106aa0f37f016eda7ec65de5acb90471/raw/760aff1fe331f8a445d4573aa88fd2ec16e72b83/My-work.gif');
   display: block;
   margin: 10px auto 0;
   max-width: 100%; /* Ensure the image fits within the window */
