@@ -24,6 +24,9 @@ p {
 .quote {
   font-style: italic;
   color: #8b949e;
+  text-align: center;
+  font-size: 15px;
+  
 }
 
 /* Header Animation */
