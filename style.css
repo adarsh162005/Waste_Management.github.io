@@ -1,117 +1,178 @@
-/* styles.css */
+/* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 2rem;
+    line-height: 1.6;
 }
 
+/* Header styles */
 h1, h2, h3 {
+    color: #58a6ff;
+    margin: 2rem 0;
     text-align: center;
-    color: #c9d1d9;
 }
 
 h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 h3 {
-    font-size: 1.5em;
-    margin-top: -10px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
+/* Add animation after the title */
+h3::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+
+/* Projects section */
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
-ul li {
+li {
     background: #161b22;
-    margin: 10px 0;
-    padding: 20px;
+    padding: 1rem;
+    margin: 1rem 0;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-p {
-    margin: 10px 0;
-}
-
-.quote {
-    font-style: italic;
-    text-align: center;
-    margin-top: 20px;
-    padding: 15px;
-    background: #161b22;
-    border-left: 5px solid #c9d1d9;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a img {
-    margin: 0 10px;
+    border: 1px solid #30363d;
     transition: transform 0.2s;
 }
 
-a img:hover {
-    transform: scale(1.1);
+li:hover {
+    transform: translateY(-2px);
+    border-color: #58a6ff;
 }
 
-p.align-left {
-    text-align: left;
+/* Skills section */
+.skills-container {
+    margin: 3rem 0;
 }
 
-p.align-center {
-    text-align: center;
+p[align="left"] {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
 }
 
-p.align-right {
-    text-align: right;
-}
-
-.tooltip {
+/* Skills icons hover effect */
+p[align="left"] a {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: auto;
-    background-color: grey;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
+p[align="left"] a::after {
+    content: attr(href);
     position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Position above the icon */
+    bottom: 100%;
     left: 50%;
-    margin-left: -60px;
+    transform: translateX(-50%);
+    background: #2f3542;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
     opacity: 0;
-    transition: opacity 0.2s;
+    visibility: hidden;
+    transition: all 0.2s;
+    white-space: nowrap;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+p[align="left"] a:hover::after {
     opacity: 1;
+    visibility: visible;
+    bottom: 120%;
 }
 
+/* Social media links */
+.connect-section {
+    margin: 3rem 0;
+}
+
+.connect-section img {
+    transition: transform 0.2s;
+}
+
+.connect-section a {
+    position: relative;
+    display: inline-block;
+}
+
+.connect-section a::after {
+    content: attr(href);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2f3542;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.connect-section a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 120%;
+}
+
+.connect-section img:hover {
+    transform: scale(1.1);
+}
+
+/* Course details */
+.course-details {
+    background: #161b22;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    margin: 2rem 0;
+}
+
+/* Quote styling */
+.quote {
+    font-style: italic;
+    color: #8b949e;
+    text-align: center;
+    margin: 3rem 0;
+    padding: 1rem;
+    border-left: 4px solid #58a6ff;
+    background: #161b22;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 1rem;
     }
-
+    
     h1 {
-        font-size: 2.5em;
+        font-size: 2rem;
     }
-
-    h3 {
-        font-size: 1.2em;
+    
+    p[align="left"], .connect-section {
+        justify-content: center;
     }
 }
